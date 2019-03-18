@@ -22,7 +22,7 @@ public class BoardManager : MonoBehaviour
     }
 
     // Some basic declarations
-    public int colums = 8;
+    public int columns = 8;
     public int rows = 8;
     public Count wallCount = new Count(5, 9);
     public Count foodCount = new Count(1, 5);
