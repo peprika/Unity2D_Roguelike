@@ -52,6 +52,19 @@ public class BoardManager : MonoBehaviour
         }
     }
 
+    void Boardsetup()
+    {
+        boardHolder = new GameObject("board").transform;
+
+        for (int x = -1; x < columns + 1; x++)
+        {
+            for (int y = -1; y < rows; y++)
+            {
+
+            }
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
