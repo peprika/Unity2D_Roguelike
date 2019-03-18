@@ -103,6 +103,17 @@ public class BoardManager : MonoBehaviour
         }
     }
 
+    // The only public function of this class
+    // This will be called to actually set up the scene for each level
+    public void SetupScene (int level)
+    {
+        BoardSetup();
+        InitializeList();
+        LayoutObjectAtRandom(wallTiles, wallCount.minimum, wallCount.maximum);
+        LayoutObjectAtRandom(foodTiles, foodCount.minimum, foodCount.maximum);
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
