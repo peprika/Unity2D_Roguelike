@@ -94,6 +94,7 @@ public class BoardManager : MonoBehaviour
         // How many objects will be spawned
         int objectCount = Random.Range(minimum, maximum + 1);
 
+        // Spawn them at random locations
         for (int i = 0; i < objectCount; i ++)
         {
             Vector3 randomPosition = RandomPosition();
