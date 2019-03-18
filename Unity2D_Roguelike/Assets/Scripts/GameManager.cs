@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public BoardManager boardScript;
 
-    private int level = 1;
+    private int level = 3;
 
 
     // Use this for initialization
@@ -21,9 +21,4 @@ public class GameManager : MonoBehaviour
         boardScript.SetupScene(level);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

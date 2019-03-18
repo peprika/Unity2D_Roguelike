@@ -45,7 +45,7 @@ public class BoardManager : MonoBehaviour
         // Map out grid positions on game board
         for (int x = 1; x < columns - 1; x++)
         {
-            for (int y = 1; y < -rows - 1; y++)
+            for (int y = 1; y < rows - 1; y++)
             {
                 gridpositions.Add(new Vector3(x, y, 0f));
             }
