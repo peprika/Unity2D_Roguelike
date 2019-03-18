@@ -9,10 +9,16 @@ public class GameManager : MonoBehaviour
     private int level = 1;
 
 
-    // Start is called before the first frame update
-    void Start()
+    // Use this for initialization
+    void Awake()
     {
-        
+        boardScript = GetComponent<BoardManager>();
+        InitGame();
+    }
+
+    void InitGame()
+    {
+        boardScript.SetupScene(level);
     }
 
     // Update is called once per frame
