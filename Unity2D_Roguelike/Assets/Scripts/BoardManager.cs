@@ -88,6 +88,20 @@ public class BoardManager : MonoBehaviour
         return randomPosition;
     }
 
+    // Spawn tiles at random positions
+    void LayoutObjectAtRandom(GameObject[] tileArray, int minimum, int maximum)
+    {
+        // How many objects will be spawned
+        int objectCount = Random.Range(minimum, maximum + 1);
+
+        for (int i = 0; i < objectCount; i ++)
+        {
+            Vector3 randomPosition = RandomPosition();
+            GameObject tileChoice = tileArray[Random.Range (0, tileArray.Length)];
+            Instantiate(tileChoice, randomPosition, Quaternion.identity);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
