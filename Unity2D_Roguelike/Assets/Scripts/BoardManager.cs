@@ -32,6 +32,8 @@ public class BoardManager : MonoBehaviour
     public GameObject[] emptyTiles;
     public GameObject[] outerWallTiles;
 
+    private Transform boardHolder;
+
     // Start is called before the first frame update
     void Start()
     {
