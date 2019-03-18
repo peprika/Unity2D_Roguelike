@@ -68,6 +68,11 @@ public class BoardManager : MonoBehaviour
                 if (x == -1 || x == columns || y == -1 || y == rows)
                     toInstantiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
 
+                // Now that the floor tile is selected, it's time to instantiate it
+                GameObject instace = Instantiate(toInstantiate, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
+
+                // Set the instantiated floor tile's parent to boardHolder
+                instace.transform.SetParent(boardHolder);
             }
         }
     }
