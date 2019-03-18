@@ -57,7 +57,8 @@ public class BoardManager : MonoBehaviour
     void BoardSetup()
     {
         boardHolder = new GameObject("Board").transform;
-
+        
+        // For each grid position...
         for (int x = -1; x < columns + 1; x++)
         {
             for (int y = -1; y < rows + 1; y++)
@@ -75,6 +76,16 @@ public class BoardManager : MonoBehaviour
                 instace.transform.SetParent(boardHolder);
             }
         }
+    }
+
+    // This function returns a random position on the gameboard
+    Vector3 RandomPosition()
+    {
+        int randomIndex = Random.Range(0, gridpositions.Count);
+        Vector3 randomPosition = gridpositions[randomIndex];
+        // Remove the grid position (so that two objects won't spawn at the same location)
+        gridpositions.RemoveAt(randomIndex);
+        return randomPosition;
     }
 
     // Start is called before the first frame update
