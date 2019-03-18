@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
 
@@ -120,18 +119,5 @@ public class BoardManager : MonoBehaviour
 
         // Spawn the exit tile (always in the same location)
         Instantiate(exit, new Vector3(columns - 1, rows - 1, 0f), Quaternion.identity);
-
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
