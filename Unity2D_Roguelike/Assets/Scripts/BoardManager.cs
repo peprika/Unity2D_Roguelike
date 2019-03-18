@@ -118,6 +118,9 @@ public class BoardManager : MonoBehaviour
         int enemyCount = (int)Mathf.Log(level, 2f);
         LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
 
+        // Spawn the exit tile (always in the same location)
+        Instantiate(exit, new Vector3(columns - 1, rows - 1, 0f), Quaternion.identity);
+
     }
 
     // Start is called before the first frame update
