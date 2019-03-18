@@ -62,6 +62,11 @@ public class BoardManager : MonoBehaviour
         {
             for (int y = -1; y < rows + 1; y++)
             {
+                // Select a floor tile
+                GameObject toInstantiate = floorTiles[Random.Range (0, floorTiles.Length)];
+                // If we're at the edge of the gameboard, choose outerwall tile instead
+                if (x == 1 || x == columns || y == -1 || y == rows)
+                    toInstantiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
 
             }
         }
