@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class BoardManager : MonoBehaviour
 {
-
+    // Used to generate min/max amount of elements
     [Serializable]
     public class Count
     {
@@ -21,6 +21,7 @@ public class BoardManager : MonoBehaviour
         }
     }
 
+    // Some basic declarations
     public int colums = 8;
     public int rows = 8;
     public Count wallCount = new Count(5, 9);
@@ -32,7 +33,12 @@ public class BoardManager : MonoBehaviour
     public GameObject[] emptyTiles;
     public GameObject[] outerWallTiles;
 
+    // Boardholder is used to maintain game board's hierarchy clean
     private Transform boardHolder;
+    
+    // Used to track game board positions
+    private List<Vector3> gridpositions = new List<Vector3>();
+
 
     // Start is called before the first frame update
     void Start()
