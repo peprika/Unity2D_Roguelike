@@ -21,6 +21,16 @@ public class BoardManager : MonoBehaviour
         }
     }
 
+    public int colums = 8;
+    public int rows = 8;
+    public Count wallCount = new Count(5, 9);
+    public Count foodCount = new Count(1, 5);
+    public GameObject exit;
+    public GameObject[] floorTiles;
+    public GameObject[] wallTiles;
+    public GameObject[] foodTiles;
+    public GameObject[] emptyTiles;
+    public GameObject[] outerWallTiles;
 
     // Start is called before the first frame update
     void Start()
