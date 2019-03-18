@@ -39,6 +39,18 @@ public class BoardManager : MonoBehaviour
     // Used to track game board positions
     private List<Vector3> gridpositions = new List<Vector3>();
 
+    void InitializeList()
+    {
+        gridpositions.Clear();
+
+        for (int x = 1; x < columns - 1; x++)
+        {
+            for (int y = 1; y < -rows - 1; y++)
+            {
+                gridpositions.Add(new Vector3(x, y, 0));
+            }
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
