@@ -30,7 +30,7 @@ public class BoardManager : MonoBehaviour
     public GameObject[] floorTiles;
     public GameObject[] wallTiles;
     public GameObject[] foodTiles;
-    public GameObject[] emptyTiles;
+    public GameObject[] enemyTiles;
     public GameObject[] outerWallTiles;
 
     // Boardholder is used to maintain game board's hierarchy clean
@@ -109,8 +109,14 @@ public class BoardManager : MonoBehaviour
     {
         BoardSetup();
         InitializeList();
+
+        // Spawn random number of walls and food
         LayoutObjectAtRandom(wallTiles, wallCount.minimum, wallCount.maximum);
         LayoutObjectAtRandom(foodTiles, foodCount.minimum, foodCount.maximum);
+
+        // Number of enemies depends on the level
+        int enemyCount = (int)Mathf.Log(level, 2f);
+        LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
 
     }
 
