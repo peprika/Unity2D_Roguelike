@@ -43,18 +43,20 @@ public class BoardManager : MonoBehaviour
     {
         gridpositions.Clear();
 
+        // Map out grid positions on game board
         for (int x = 1; x < columns - 1; x++)
         {
             for (int y = 1; y < -rows - 1; y++)
             {
-                gridpositions.Add(new Vector3(x, y, 0));
+                gridpositions.Add(new Vector3(x, y, 0f));
             }
         }
     }
 
-    void Boardsetup()
+    // BoardSetup() sets the outer walls and gameboard floor
+    void BoardSetup()
     {
-        boardHolder = new GameObject("board").transform;
+        boardHolder = new GameObject("Board").transform;
 
         for (int x = -1; x < columns + 1; x++)
         {
