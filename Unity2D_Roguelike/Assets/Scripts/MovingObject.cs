@@ -21,6 +21,14 @@ public abstract class MovingObject : MonoBehaviour
 
     }
 
+    // Coroutine for element movement
+    // "end" = where to move to
+    protected IEnumerator SmoothMovement (Vector3 end)
+    {
+        // Calculate the distance to move
+        float sqrRemainingDistance = (transform.position - end).sqrMagnitude;
+    }
+
     // Update is called once per frame
     void Update()
     {
