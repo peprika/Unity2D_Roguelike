@@ -12,7 +12,8 @@ public abstract class MovingObject : MonoBehaviour
     private float inverseMoveTime;
 
     // Start is called before the first frame update
-    void Start()
+    // It's "protected virtual" so that it can be overwritten by inheriting classes
+    protected virtual void Start()
     {
         
     }
