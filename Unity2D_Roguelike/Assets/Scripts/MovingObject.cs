@@ -33,9 +33,11 @@ public abstract class MovingObject : MonoBehaviour
         if (hit.transform == null)
         {
             StartCoroutine(SmoothMovement(end));
+            // Movement was successful, so return true
             return true;
         }
 
+        // Movement was unsuccessful, so return false
         return false;
     }
 
