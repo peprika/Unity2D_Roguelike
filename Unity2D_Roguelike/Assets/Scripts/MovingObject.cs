@@ -21,15 +21,23 @@ public abstract class MovingObject : MonoBehaviour
 
     }
 
+    // Let's get things moving!
+    // "out" keyword means we're returning this value in addition to the boolean value
     protected bool Move (int xDir, int yDir, out RaycastHit2D hit)
     {
+
+        // Get the start position, and then calculate end position
         Vector2 start = transform.position;
         Vector2 end = start + new Vector2(xDir, yDir);
 
+        // Disable the collider, so we won't hit our own collider
         boxCollider.enabled = false;
+        // Check if anything would be hit while moving
         hit = Physics2D.Linecast(start, end, blockingLayer);
+        // Re-enable the collider
         boxCollider.enabled = true;
 
+        // If hit is null, we can move somewhere!
         if (hit.transform == null)
         {
             StartCoroutine(SmoothMovement(end));
