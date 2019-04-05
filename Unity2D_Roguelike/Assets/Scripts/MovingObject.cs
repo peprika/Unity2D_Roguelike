@@ -66,7 +66,7 @@ public abstract class MovingObject : MonoBehaviour
         }
     }
 
-    protected virtual void AttemptMove <T> (int xDir, yDir)
+    protected virtual void AttemptMove <T> (int xDir, int yDir)
         where T: Component
     {
         RaycastHit2D hit;
