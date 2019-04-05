@@ -66,6 +66,22 @@ public abstract class MovingObject : MonoBehaviour
         }
     }
 
+    protected virtual void AttemptMove <T> (int xDir, yDir)
+        where T: Component
+    {
+        RaycastHit2D hit;
+        bool canMove = Move(xDir, yDir, out hit);
+
+        if (hit.transform == null)
+            return;
+
+        // Hit component is generic, cause anything can hit anything
+        T hitComponent = hit.transform.GetComponent<T>();
+
+        if (!canMove && hitComponent != null)
+            OnCantMove(hitComponent);
+    }
+
     // Hey, this thing can't move!
     protected abstract void OnCantMove <T> (T component)
         where T : Component;
