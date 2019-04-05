@@ -40,6 +40,7 @@ public abstract class MovingObject : MonoBehaviour
         // If hit is null, we can move somewhere!
         if (hit.transform == null)
         {
+            // Make the movement smoooooth with a coroutine
             StartCoroutine(SmoothMovement(end));
             // Movement was successful, so return true
             return true;
