@@ -90,6 +90,13 @@ public class Player : MovingObject
         animator.SetTrigger("playerChop");
     }
 
+    // Player gets to exit!
+    private void Restart()
+    {
+        // Restart level (advance per scripts)
+        Application.LoadLevel(Application.loadedLevel);
+    }
+
     private void CheckIfGameOver()
     {
         if (food <= 0)
