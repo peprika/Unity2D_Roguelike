@@ -79,6 +79,30 @@ public class Player : MovingObject
         GameManager.instance.playersTurn = false;
     }
 
+    // OnTriggerEnted2D() is part of Unity API
+    // Check what kind of item the player collided with
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // Player found the exit!
+        if (other.tag == "Exit")
+        {
+            Invoke("Restart", restartLevelDelay);
+            enabled = false;
+        }
+        // Player found food!
+        else if (other.tag == "Food")
+            {
+            food += pointsPerFood;
+            other.gameObject.SetActive(false);
+        }
+        // Player found a soda!
+        else if (other.tag == "Soda")
+            {
+            food += pointsPerSoda;
+            other.gameObject.SetActive(false);
+        }
+    }
+
     // The player is trying to walk into a wall!
     protected override void OnCantMove<T>(T component)
     {
