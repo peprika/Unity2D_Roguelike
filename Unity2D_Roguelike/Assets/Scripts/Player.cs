@@ -24,6 +24,9 @@ public class Player : MovingObject
     protected override void Start()
     {
         animator = GetComponent<Animator>();
+
+        // Get the player's current food points
+        food = GameManager.instance.playerFoodPoints;
     }
 
     // Update is called once per frame
