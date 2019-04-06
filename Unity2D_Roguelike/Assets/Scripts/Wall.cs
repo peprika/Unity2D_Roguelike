@@ -12,7 +12,7 @@ public class Wall : MonoBehaviour
     // Awake is called before the first frame update
     void Awake()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
 }
