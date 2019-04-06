@@ -9,7 +9,7 @@ public class Player : MovingObject
 
     // Food items' point values
     public int pointsPerFood = 10;
-    public int pointsperSoda = 20;
+    public int pointsPerSoda = 20;
     
     // Stores player's score during a level
     public int food;
