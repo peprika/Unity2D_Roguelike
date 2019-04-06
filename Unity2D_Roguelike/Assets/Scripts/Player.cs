@@ -79,6 +79,17 @@ public class Player : MovingObject
         GameManager.instance.playersTurn = false;
     }
 
+    // The player is trying to walk into a wall!
+    protected override void OnCantMove<T>(T component)
+    {
+        // Let's store the passed component as the wall that was hit
+        Wall hitWall = component as Wall;
+        // The wall takes damage
+        hitWall.DamageWall(wallDamage);
+        // Player character chops (animation)
+        animator.SetTrigger("playerChop");
+    }
+
     private void CheckIfGameOver()
     {
         if (food <= 0)
