@@ -23,7 +23,7 @@ public class Player : MovingObject
     // "protected override" here, because we'll have a different implementation than in MovingObject class
     protected override void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
