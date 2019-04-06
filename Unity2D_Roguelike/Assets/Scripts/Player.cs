@@ -42,7 +42,24 @@ public class Player : MovingObject
     // Update is called once per frame
     void Update()
     {
-        
+        // If it's NOT the player's turn, quit
+        if (!GameManager.instance.playersTurn) return;
+
+        // Where we're moving to, 1 or -1
+        int horizontal = 0;
+        int vertical = 0;
+
+        horizontal = (int) Input.GetAxisRaw("Horizontal");
+        vertical = (int) Input.GetAxisRaw("Vertical");
+
+        // If the player moves horizontally, don't move vertically (diagonally)
+        if (horizontal != 0)
+            vertical = 0;
+
+        // We're trying to move now!
+        if (horizontal != 0 || vertical != 0)
+            // We might hit a wall
+            AttemptMove<Wall>(horizontal, vertical);
     }
 
     protected override void AttemptMove<T>(int xDir, int yDir)
