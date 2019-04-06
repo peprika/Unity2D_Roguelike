@@ -45,6 +45,11 @@ public class Player : MovingObject
         
     }
 
+    protected override void AttemptMove<T>(int xDir, int yDir)
+    {
+        base.AttemptMove<T>(xDir, yDir);
+    }
+
     private void CheckIfGameOver()
     {
         if (food <= 0)
