@@ -15,4 +15,14 @@ public class Wall : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    // Player can damage the wall
+    public void DamageWall (int loss)
+    {
+        // Show the "wall damaged!" sprite and decrease wall's HP
+        spriteRenderer.sprite = dmgSprite;
+        hp -= loss;
+        // Destroy (hide) the wall
+        if (hp <= 0)
+            gameObject.SetActive(false);
+    }
 }
