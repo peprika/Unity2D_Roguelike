@@ -97,6 +97,17 @@ public class Player : MovingObject
         Application.LoadLevel(Application.loadedLevel);
     }
 
+    // When an enemy hits player (loss = how many food points player loses)
+    public void LoseFood (int loss)
+    {
+        // Animation: ouch!
+        animator.SetTrigger("playerHit");
+        // Substract player's food and check if s/he run out of food
+        food -= loss;
+        CheckIfGameOver();
+    }
+
+    // Oooh, damn, did the player die?
     private void CheckIfGameOver()
     {
         if (food <= 0)
