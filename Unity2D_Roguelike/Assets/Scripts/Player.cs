@@ -27,6 +27,9 @@ public class Player : MovingObject
 
         // Get the player's current food points
         food = GameManager.instance.playerFoodPoints;
+
+        // Call Start() of MovingObject
+        base.Start();
     }
 
     // Update is called once per frame
