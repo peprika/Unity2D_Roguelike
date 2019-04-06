@@ -31,4 +31,10 @@ public class GameManager : MonoBehaviour
         boardScript.SetupScene(level);
     }
 
+    public void GameOver()
+    {
+        // Disables the GameManager
+        enabled = false;
+    }
+
 }
