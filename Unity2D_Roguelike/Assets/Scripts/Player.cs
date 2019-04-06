@@ -47,6 +47,9 @@ public class Player : MovingObject
 
     protected override void AttemptMove<T>(int xDir, int yDir)
     {
+        // Every move takes up 1 food
+        food--;
+
         base.AttemptMove<T>(xDir, yDir);
     }
 
