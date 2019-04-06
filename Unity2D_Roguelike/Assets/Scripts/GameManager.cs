@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     public BoardManager boardScript;
+    public int plyaerFoodPoints = 100;
 
     private int level = 3;
 
