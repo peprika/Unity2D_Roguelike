@@ -50,7 +50,16 @@ public class Player : MovingObject
         // Every move takes up 1 food
         food--;
 
+        // Try to move, as per MovingObject
         base.AttemptMove<T>(xDir, yDir);
+
+        RaycastHit2D hit;
+
+        // Since food was lost -- is it game over already?
+        CheckIfGameOver();
+
+        // End of player's turn
+        GameManager.instance.playersTurn = false;
     }
 
     private void CheckIfGameOver()
