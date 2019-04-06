@@ -32,6 +32,13 @@ public class Player : MovingObject
         base.Start();
     }
 
+    // OnDisable() is part of Unity API: it's called when Player is disabled
+    // Saves the value of "food" in the GameManager when the level changes
+    private void OnDisable()
+    {
+            GameManager.instance.playerFoodPoints = food;
+    }
+
     // Update is called once per frame
     void Update()
     {
