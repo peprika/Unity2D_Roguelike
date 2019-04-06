@@ -19,8 +19,9 @@ public class Player : MovingObject
     private Animator animator;
 
 
-    // Start is called before the first frame update
-    void Start()
+    // Start is called before the first frame update.
+    // "protected override" here, because we'll have a different implementation than in MovingObject class
+    protected override void Start()
     {
         
     }
