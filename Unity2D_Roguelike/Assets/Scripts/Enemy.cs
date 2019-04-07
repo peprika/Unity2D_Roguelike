@@ -57,6 +57,20 @@ public class Enemy : MovingObject
         int xDir = 0;
         int yDir = 0;
 
+        // Check if player's X-position is roughly the same as enemy's X-position
+        // aka: is the enemy in the same column as the player?
         if (Mathf.Abs (target.position.x - transform.position.x) < float.Epsilon)
+        {
+            // If so, move vertically towards player (1 = up, -1 = down)
+            yDir = target.position.y > transform.position.y ? 1 : -1;
+        }
+        else
+        {
+            // If not, move horizontally towards player (1 = right, -1 = left)
+            xDir = target.position.x > transform.position.x ? 1 : -1;
+        }
+
+        AttemptMove<Player>(xDir, yDir);
     }
+
 }
