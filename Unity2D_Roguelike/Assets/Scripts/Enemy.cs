@@ -33,8 +33,21 @@ public class Enemy : MovingObject
         
     }
 
+    // The enemy tries to move
+    // T = player (aka move towards player)
     protected override void AttemptMove<T>(int xDir, int yDir)
     {
+        // Enemy skips this every other turn
+        if (skipMove)
+        {
+            skipMove = false;
+            return;
+        }
 
+        // Now the enemy is ready to move
+        base.AttemptMove<T>(xDir, yDir);
+
+        // Enemy has moved
+        skipMove = true;
     }
 }
