@@ -70,7 +70,14 @@ public class Enemy : MovingObject
             xDir = target.position.x > transform.position.x ? 1 : -1;
         }
 
+        // Now the enemy tries to move
         AttemptMove<Player>(xDir, yDir);
+    }
+
+    // Override MovingObject's abtract OnCantMove()
+    protected override void OnCantMove<T>(T component)
+    {
+
     }
 
 }
