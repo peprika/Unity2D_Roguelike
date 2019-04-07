@@ -14,7 +14,8 @@ public class Enemy : MovingObject
 
 
     // Start is called before the first frame update
-    void Start()
+    // "protected override", because we're overriding MovingObject's Start()
+    protected override void Start()
     {
         
     }
