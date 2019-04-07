@@ -34,10 +34,9 @@ public class Enemy : MovingObject
     }
 
     // The enemy tries to move
-    // T = player (aka move towards player)
     protected override void AttemptMove<T>(int xDir, int yDir)
     {
-        // Enemy skips this every other turn
+        // Enemy skips every other turn
         if (skipMove)
         {
             skipMove = false;
@@ -45,16 +44,19 @@ public class Enemy : MovingObject
         }
 
         // Now the enemy is ready to move
+        // T = player (aka move towards player)
         base.AttemptMove<T>(xDir, yDir);
 
         // Enemy has moved
         skipMove = true;
     }
 
+    // Called by GameManager when enemies move
     public void MoveEnemy()
     {
         int xDir = 0;
         int yDir = 0;
 
+        if (Mathf.Abs (target.position.x - transform.position.x) < float.Epsilon)
     }
 }
