@@ -74,10 +74,15 @@ public class Enemy : MovingObject
         AttemptMove<Player>(xDir, yDir);
     }
 
+    // The enemy can't move!
     // Override MovingObject's abtract OnCantMove()
     protected override void OnCantMove<T>(T component)
     {
+        // Get the player object to hit
+        Player hitPlayer = component as Player;
 
+        // The player loses food!
+        hitPlayer.LoseFood(playerDamage);
     }
 
 }
