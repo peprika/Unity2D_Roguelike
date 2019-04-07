@@ -13,8 +13,8 @@ public class Enemy : MovingObject
     private bool skipMove;      // skipMove is used so that enemy moves every other turn
 
 
-    // Start is called before the first frame update
-    // "protected override", because we're overriding MovingObject's Start()
+    // Start() is called before the first frame update
+    // "protected override" here, because we're overriding MovingObject's Start()
     protected override void Start()
     {
         // Get animator
@@ -27,9 +27,14 @@ public class Enemy : MovingObject
         base.Start();
     }
 
-    // Update is called once per frame
+    // Update() is called once per frame
     void Update()
     {
         
+    }
+
+    protected override void AttemptMove<T>(int xDir, int yDir)
+    {
+
     }
 }
