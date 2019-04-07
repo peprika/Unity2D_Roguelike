@@ -27,12 +27,6 @@ public class Enemy : MovingObject
         base.Start();
     }
 
-    // Update() is called once per frame
-    void Update()
-    {
-        
-    }
-
     // The enemy tries to move
     protected override void AttemptMove<T>(int xDir, int yDir)
     {
