@@ -17,7 +17,14 @@ public class Enemy : MovingObject
     // "protected override", because we're overriding MovingObject's Start()
     protected override void Start()
     {
-        
+        // Get animator
+        animator = GetComponent<Animator>();
+
+        // Get player's position to target
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+
+        // Call Start() of MovingObject
+        base.Start();
     }
 
     // Update is called once per frame
