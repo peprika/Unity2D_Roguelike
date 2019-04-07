@@ -50,4 +50,11 @@ public class Enemy : MovingObject
         // Enemy has moved
         skipMove = true;
     }
+
+    public void MoveEnemy()
+    {
+        int xDir = 0;
+        int yDir = 0;
+
+    }
 }
