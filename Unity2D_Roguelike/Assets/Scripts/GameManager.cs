@@ -42,4 +42,29 @@ public class GameManager : MonoBehaviour
         enabled = false;
     }
 
+    // Coroutine for moving enemies
+    IEnumerator MoveEnemies()
+    {
+        enemiesMoving = true;
+
+        // Wait turn delay
+        yield return new WaitForSeconds(turnDelay);
+
+        // If there are no enemies, wait still
+        if (enemies.Count == 0)
+        {
+            yield return new WaitForSeconds(turnDelay);
+        }
+
+        // Move each enemy, and wait their move time
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            enemies[i].MoveEnemy();
+            yield return new WaitForSeconds(enemies[i].moveTime);
+        }
+
+        // The enemies have moved, it's the player's turn now
+        playersTurn = true;
+        enemiesMoving = false;
+    }
 }
