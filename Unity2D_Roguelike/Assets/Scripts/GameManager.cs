@@ -23,7 +23,10 @@ public class GameManager : MonoBehaviour
         else if (instance != this)
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
- 
+
+        // Initialize enemy list
+        enemies = new List<Enemy>();
+
         // Get game board and initialize game
         boardScript = GetComponent<BoardManager>();
         InitGame();
