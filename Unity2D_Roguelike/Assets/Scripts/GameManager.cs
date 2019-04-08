@@ -42,6 +42,12 @@ public class GameManager : MonoBehaviour
         enabled = false;
     }
 
+    // Update is called once per frame
+    private void Update()
+    {
+        
+    }
+
     // Coroutine for moving enemies
     IEnumerator MoveEnemies()
     {
