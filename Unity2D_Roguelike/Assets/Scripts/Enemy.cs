@@ -78,6 +78,9 @@ public class Enemy : MovingObject
         // Get the player object to hit
         Player hitPlayer = component as Player;
 
+        // Play the enemy's attack animation
+        animator.SetTrigger("enemyAttack");
+
         // The player loses food!
         hitPlayer.LoseFood(playerDamage);
     }
