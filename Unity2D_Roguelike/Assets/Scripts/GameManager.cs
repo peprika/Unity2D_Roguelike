@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
 
     void InitGame()
     {
+        // Clear enemies from the last level
+        enemies.Clear();
         boardScript.SetupScene(level);
     }
 
