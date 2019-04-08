@@ -17,6 +17,9 @@ public class Enemy : MovingObject
     // "protected override" here, because we're overriding MovingObject's Start()
     protected override void Start()
     {
+        // Add the enemy to the list of enemies in GameManager
+        GameManager.instance.AddEnemyToList(this);
+
         // Get animator
         animator = GetComponent<Animator>();
 
