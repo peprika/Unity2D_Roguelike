@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     public BoardManager boardScript;
+    public float turnDelay = .1f;
     public int playerFoodPoints = 100;
     [HideInInspector] public bool playersTurn = true;
 
