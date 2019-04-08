@@ -52,6 +52,12 @@ public class GameManager : MonoBehaviour
         StartCoroutine(MoveEnemies());
     }
 
+    // Add enemies to list, so they can be managed from there
+    public void AddEnemyToList(Enemy script)
+    {
+        enemies.Add(script);
+    }
+
     // Coroutine for moving enemies
     IEnumerator MoveEnemies()
     {
