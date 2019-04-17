@@ -77,7 +77,11 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        // Disables the GameManager
+        // Game Over screen: game over text + black background
+        levelText.text = "You starved after " + level + " days.";
+        levelImage.SetActive(true);
+
+        // Disable the GameManager
         enabled = false;
     }
 
