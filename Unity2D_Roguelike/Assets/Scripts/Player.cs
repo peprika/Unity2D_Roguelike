@@ -65,6 +65,7 @@ public class Player : MovingObject
     {
         // Every move takes up 1 food
         food--;
+        foodText.text = "Food: " + food;
 
         // Try to move, as per MovingObject
         base.AttemptMove<T>(xDir, yDir);
