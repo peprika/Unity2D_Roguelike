@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance = null;
+    public static GameManager instance = null;			//Static instance of GameManager which allows it to be accessed by any other script.
     public BoardManager boardScript;
 
     public float levelStartDelay = .2f;                 // How many seconds to wait between each level
