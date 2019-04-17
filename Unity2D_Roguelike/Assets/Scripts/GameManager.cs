@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public BoardManager boardScript;
 
-    public float levelDelay = .2f;                      // How many seconds to wait between each level
+    public float levelStartDelay = .2f;                 // How many seconds to wait between each level
     public float turnDelay = .1f;                       // How many seconds to wait between each turn
     public int playerFoodPoints = 100;                  // Player's food points
     [HideInInspector] public bool playersTurn = true;   // true if player's turn
@@ -61,9 +61,18 @@ public class GameManager : MonoBehaviour
         levelText.text = "Day " + level;
         levelImage.SetActive(true);
 
+        // Ready to start level
+        Invoke("HideLevelImage", levelStartDelay);
+
         // Clear enemies from the last level
         enemies.Clear();
         boardScript.SetupScene(level);
+    }
+
+    private void HideLevelImage()
+    {
+        levelImage.SetActive(false);
+        doingSetup = false;
     }
 
     public void GameOver()
