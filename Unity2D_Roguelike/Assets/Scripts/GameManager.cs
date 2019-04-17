@@ -84,10 +84,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        // If it's the player's turn or enemies are already moving, don't do anything for now
-        if (playersTurn || enemiesMoving)
+        // If it's the player's turn/enemies are already moving/title screen screen, don't do anything for now
+        if (playersTurn || enemiesMoving || doingSetup)
             return;
-        // The enemies are ready to move
+        // The enemies are ready to move now
         StartCoroutine(MoveEnemies());
     }
 
