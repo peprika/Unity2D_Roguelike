@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MovingObject
 {
@@ -13,8 +14,9 @@ public class Player : MovingObject
     
     // Stores player's score during a level
     public int food;
+    public Text foodText;
 
-    public float restartLevelDelay = 1f;
+    public float restartLevelDelay = 1f
 
     private Animator animator;
 
@@ -27,6 +29,7 @@ public class Player : MovingObject
 
         // Get the player's current food points
         food = GameManager.instance.playerFoodPoints;
+        foodText.text = "Food: " + food;
 
         // Call Start() of MovingObject
         base.Start();
