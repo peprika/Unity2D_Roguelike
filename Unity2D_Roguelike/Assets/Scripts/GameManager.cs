@@ -1,18 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     public BoardManager boardScript;
-    public float turnDelay = .1f;
-    public int playerFoodPoints = 100;
-    [HideInInspector] public bool playersTurn = true;
 
-    private int level = 3;
-    private List<Enemy> enemies;
-    private bool enemiesMoving;
+    public float levelDelay = .2f;                      // How many seconds to wait between each level
+    public float turnDelay = .1f;                       // How many seconds to wait between each turn
+    public int playerFoodPoints = 100;                  // Player's food points
+    [HideInInspector] public bool playersTurn = true;   // true if player's turn
+
+    private int level = 1;                              // Current level
+    private List<Enemy> enemies;                        // List of enemies
+    private bool enemiesMoving;                         // true if enemies are moving
+    private Text levelText;                             // Text between levels ("Day X")
+    private bool doingSetup;                            // true if user is doing setup
 
     // Use this for initialization
     void Awake()
