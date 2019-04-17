@@ -93,12 +93,14 @@ public class Player : MovingObject
         else if (other.tag == "Food")
             {
             food += pointsPerFood;
+            foodText.text = "+" + pointsPerFood + " Food: " + food;
             other.gameObject.SetActive(false);
         }
         // Player found a soda!
         else if (other.tag == "Soda")
             {
             food += pointsPerSoda;
+            foodText.text = "+" + pointsPerSoda + " Food: " + food;
             other.gameObject.SetActive(false);
         }
     }
@@ -128,6 +130,8 @@ public class Player : MovingObject
         animator.SetTrigger("playerHit");
         // Substract player's food and check if s/he run out of food
         food -= loss;
+
+        foodText.text = "-" + loss + " Food: " + food;
         CheckIfGameOver();
     }
 
