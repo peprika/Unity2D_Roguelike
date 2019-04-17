@@ -5,20 +5,16 @@ using UnityEngine.UI;
 
 public class Player : MovingObject
 {
-    // How much damage chop inflicts to walls
-    public int wallDamage = 1;
 
-    // Food items' point values
-    public int pointsPerFood = 10;
-    public int pointsPerSoda = 20;
-    
-    // Stores player's score during a level
-    public int food;
-    public Text foodText;
+    public int pointsPerFood = 10;                      // Food items' point values
+    public int pointsPerSoda = 20;                      // Food items' point values
+    public int wallDamage = 1;                          // How much damage chop inflicts to walls
+    public int food;                                    // Player's food score value
+    public Text foodText;                               // Food score text
 
-    public float restartLevelDelay = 1f
+    public float restartLevelDelay = 1f;                // Delay between levels
 
-    private Animator animator;
+    private Animator animator;                          // Animator
 
 
     // Start is called before the first frame update.
