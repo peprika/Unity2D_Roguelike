@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     private int level = 1;                              // Current level
     private List<Enemy> enemies;                        // List of enemies
     private bool enemiesMoving;                         // true if enemies are moving
-    private Text levelText;                             // Text between levels ("Day X")
+    private GameObject levelImage;                      // Title screen between levels
+    private Text levelText;                             // Text in the title card between levels ("Day X")
     private bool doingSetup;                            // true if user is doing setup
 
     // Use this for initialization
@@ -37,8 +38,29 @@ public class GameManager : MonoBehaviour
         InitGame();
     }
 
+    // OnLevelWasLoaded is called every time a scene is loaded
+    private void OnLevelWasLoaded(int index)
+    {
+        // Level number up
+        level++;
+
+        // Initialize a new level
+        InitGame();
+    }
+
     void InitGame()
     {
+        // Player can't move while the title card is showing
+        doingSetup = true;
+
+        // Get references to level image+text
+        levelImage = GameObject.Find("LevelImage");
+        levelText = GameObject.Find("LevelText").GetComponent<Text>();
+
+        // Set level text and show the title screen
+        levelText.text = "Day " + level;
+        levelImage.SetActive(true);
+
         // Clear enemies from the last level
         enemies.Clear();
         boardScript.SetupScene(level);
